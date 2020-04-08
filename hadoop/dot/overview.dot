@@ -1,0 +1,25 @@
+digraph hadoop {
+    rankdir = LR;
+    Node [ shape =rectangle ];
+    hadoop -> ZooKeeper;
+    hadoop -> Yarn;
+    hadoop -> MapReduce;
+    hadoop -> HDFS;
+    hadoop -> Hive;
+    hadoop -> HBase;
+    Yarn -> ResourceManager;
+    Yarn -> NodeManager;
+    ResourceManager -> Scheduler;
+    ResourceManager -> AppManager;
+    ResourceManager -> ResourceTracker;
+    Scheduler -> CapacityScheduler;
+    Scheduler -> FairScheduler;
+    NodeManager -> "App Master";
+    NodeManager -> Container;
+    HDFS -> NameNode;
+    HDFS -> SecondaryNameNode;
+    HDFS -> JournalNode;
+    HDFS -> DataNode;
+    Hive -> MetaServer;
+    Hive -> CLI;
+}

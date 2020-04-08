@@ -1,0 +1,13 @@
+digraph hbase {
+    rankdir = TD;
+    Node [shape = r];
+    HBase -> ZooKeeper;
+    HBase -> "MasterServer(active,standby)";
+    HBase -> RegionServer
+    RegionServer -> MemStore;
+    RegionServer -> StoreFile;
+    RegionServer -> "HLog(WAL)";
+
+
+
+}
