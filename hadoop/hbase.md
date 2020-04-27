@@ -60,9 +60,9 @@ meta table的结构如下：
 ![](../hadoop/img/hbase-meta-table.jpg)
 #### Region Server结构
 RegionServer运行在HDFS的data node上，有4个部分组成：
-- WAL。Write Ahead Log，预写日志文件，存储在HDFS上。RegionServer崩溃后，日志文件用来恢复新写入，但是还没有刷新到硬盘上的数据。
+- WAL。Write Ahead Log，预写日志文件，存储在HDFS上。RegionServer崩溃后，日志文件用来恢复新写入、但是还没有刷新到硬盘上的数据。
 - BlockCache。查询缓存，在内存里缓存频繁读取的数据，如果BlockCache满了，会根据LRU算法清除最近不活跃的数据，释放缓存空间。
-- MemStore。写入缓存，HBase中数据在被刷新到磁盘之前是缓存在内存中的MEMStore的，每个region的每个列族都有一个MemStore，MemStore的数据辉县根据key排序，然后写入硬盘。
+- MemStore。写入缓存，HBase中数据在被刷新到磁盘之前是缓存在内存中的MEMStore的，每个region的每个列族都有一个MemStore，MemStore的数据先根据key排序，然后写入硬盘。
 - HFile。HDFS上的数据文件，里面存储key value对。
 ![](../hadoop/img/hbase-regionserver.jpg)
 ##### HBase写入流程
@@ -77,3 +77,4 @@ MemStore在内存中按照key的顺序存储Key-Value对，一个MemStore对应�
 
 #### 参考资料
 - [深入分析hbase架构](https://zhuanlan.zhihu.com/p/30414252)
+- [An In-Depth Look at the HBase Architecture](https://mapr.com/blog/in-depth-look-hbase-architecture/#.VdMxvWSqqko)

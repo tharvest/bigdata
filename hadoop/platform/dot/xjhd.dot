@@ -1,0 +1,16 @@
+digraph xjhd {
+    rankdir = TD;
+    Node [shape = r];
+    货主 -> 下单 ->匹配订单->推单 ;
+    车主 -> 抢单 ;
+    用户 -> 注册 
+    用户 -> 地址管理
+    用户 -> 路线管理
+    HBase -> RegionServer
+    RegionServer -> MemStore;
+    RegionServer -> StoreFile;
+    RegionServer -> "HLog(WAL)";
+
+
+
+}
