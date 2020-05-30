@@ -1,0 +1,26 @@
+digraph {
+
+    rankdir = LR
+    
+    #Node [shape = r];
+
+    node [fontname="KaiTi"] 
+
+    "3. 主要概念" -> "整体架构"
+    "3. 主要概念" -> "核心特性"
+    "核心特性" -> "水平扩展"
+    "核心特性" -> "高可用"
+
+    "2. TiDB快速上手指南"
+
+    "1. 关于TiDB" -> TiDB简介
+    "1. 关于TiDB" -> Benchmark测试 
+    Benchmark测试 -> 如何用Sysbench测试TiDB
+    Benchmark测试 -> "如何对TiDB进行TPC-C测试"
+    Benchmark测试 -> "Sysbench性能对比-v3.0对比v2.1"
+    Benchmark测试 -> "TPC-C性能对比 - v4.0对比v3.0"
+    Benchmark测试 -> "TPC-C性能对比 - v3.0对比v2.1"
+    Benchmark测试 -> "线上负载与Add Index相互影响测试"
+
+    
+}
