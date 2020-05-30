@@ -1,4 +1,4 @@
-![](./img/hbase_logo_with_orca_large.png)
+![](../hadoop/img/hbase_logo_with_orca_large.png)
 ### HBASE架构分析
 
 hbase在架构上有三种服务组件组成：Zookeeper，Master Server，Region Server
