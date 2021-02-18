@@ -11,6 +11,4 @@ digraph xjhd {
     RegionServer -> StoreFile;
     RegionServer -> "HLog(WAL)";
 
-
-
 }

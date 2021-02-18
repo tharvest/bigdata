@@ -1,0 +1,8 @@
+digraph abdp {
+    rankdir = LR;
+    Node [shape = r];
+    "ABDP" -> "AbdpCarrier";
+    "ABDP" -> "AbdpCockpit";
+   
+
+}

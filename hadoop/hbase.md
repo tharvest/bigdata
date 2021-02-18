@@ -26,9 +26,9 @@ HBase Master主要负责分配region和管理数据的元信息。
 - 提供DDL相关的API，创建、删除、更新表结构。
 
 #### ZooKeeper
-ZooKeeper是一个分布式的无中心的元数据存储服务。ZooKeeper监测HBase集群中节点的状态信息，如果监测到某个节点宕机，Zookeeper会通知HBase Master Server节点。在生产环境ZooKeeper至少需要部署3个节点，用来满足Paxos选举算法的最低要求。
+ZooKeeper是一个分布式的无中心的元数据存储服务。ZooKeeper监测HBase集群中节点的状态信息，如果监测到某个节点宕机，Zookeeper会通知HBase Master Server节点。在生产环境ZooKeeper至少需要部署3个节点，用来满足Paxos选举算法的最低要求。RegionServer节点和MasterServer节点通过heartbeat方式向ZooKeeper报告状态
 ![](../hadoop/img/hbase-zk.jpg)
-RegionServer节点和MasterServer节点通过heartbeat方式向ZooKeeper报告状态
+
 
 Zookeeper、MasterServer、RegionServer三者协同工作。
 ZooKeeper负责维护集群的成员列表，监测哪台服务器在线，哪台服务器宕机。RegionServer和主备MasterServer与ZooKeeper维护一个session连接，通过这个session定时发送hearbeat，通知ZooKeeper说明自己在线。
